@@ -1,0 +1,16 @@
+<!--<div *ngFor="let post of postlist" class="card">
+  <div class="card-body">
+    {{post.title}}
+  </div>
+</div>-->
+<div class="row card-group">
+  <div class="col-4"  *ngFor="let post of postlist">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{post.id}}</h5>
+        <p class="card-text">{{post.title}}</p>
+        <a href="#" [routerLink]="['/postdetail', post.id]" class="btn btn-primary">Post Details</a>
+      </div>
+    </div>
+  </div>
+</div>
