@@ -1,0 +1,11 @@
+<div class="row card-group">
+  <div class="col-4"  *ngFor="let album of albumlist">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{album.id}}</h5>
+        <p class="card-text">{{album.title}}</p>
+        <a href="#" [routerLink]="['/albumdetail', album.id]" class="btn btn-primary">Album Details</a>
+      </div>
+    </div>
+  </div>
+</div>

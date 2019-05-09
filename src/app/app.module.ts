@@ -8,6 +8,7 @@ import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PostsModule } from './posts/posts.module';
 import { CoreModule } from './core/core.module';
+import { AlbumsModule } from './albums/albums.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CoreModule } from './core/core.module';
     HttpClientModule,
     AppRoutingModule,
     PostsModule,
+    AlbumsModule,
     CoreModule
   ],
   providers: [GlobalService],

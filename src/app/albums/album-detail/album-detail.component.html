@@ -1,0 +1,13 @@
+<div class="row card-group">
+  <div class="col-4"  *ngFor="let photo of photolist">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{photo.thumbnailUrl}}" alt="Card image cap">
+
+      <div class="card-body">
+        <h5 class="card-title">{{photo.id}}</h5>
+        <p class="card-text">{{photo.title}}</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
