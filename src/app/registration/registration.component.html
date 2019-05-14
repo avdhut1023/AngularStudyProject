@@ -1,0 +1,102 @@
+<!-- <!-- main app container -->
+ <!-- <div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <h3>Angular 6 Template-Driven Form Validation</h3>
+              <form name="form" #myForm="ngForm" (ngSubmit) = "onSubmit()">
+                  <div class="form-group">
+                      <label for="firstName">First Name*</label>
+                      <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" #firstname="ngModel"   required minlength="6" />
+                      <div *ngIf="firstname.touched && firstname.invalid">
+                        <div *ngIf="firstname.invalid && firstname.errors.required" class="alert alert-danger">First name is mandatory</div>
+                        <div *ngIf="firstname.invalid && firstname.errors.minlength" class="alert alert-danger">First name must have minimum 6 characters</div>
+                    </div>
+
+                      <div *ngIf="myForm.submitted && firstname.invalid">
+                          <div *ngIf="firstname.invalid && firstname.errors.required">First name is mandatory</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName"  #lastname="ngModel" required />
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" name="email" [(ngModel)]="email"  #myemail="ngModel" required />
+                      
+                  </div>
+                  <div class="form-group">
+                    <label for="selectcity">City</label>
+
+                    <select name="city" class="form-control" [(ngModel)] = "cityvalue" required #cityselect = "ngModel">
+                      <option value="Pune">Pune</option>
+                      <option value="Mumbai">Mumbai</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Surat">Surat</option>
+                    </select>
+                    <div *ngIf="cityselect.touched && cityselect.invalid">
+                      <div *ngIf="cityselect.invalid && cityselect.errors.required" class="alert alert-danger">City name is mandatory</div>
+                      
+                  </div>
+                </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name="password" [(ngModel)]="password" #mypassword="ngModel" minlength="6"/>
+                      
+                  </div>
+                  <div class="form-group">
+                      <button   class="btn btn-primary">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> 
+ --> 
+
+
+ <div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <h3>Angular 6 Template-Driven Form Validation</h3>
+              <form name="form" [formGroup]="myFormGr" (ngSubmit) = "onSubmit()">
+                  <div class="form-group" >
+                      <label for="firstName">First Name*</label>
+                      <input [ngClass] = "{'has-danger': myFormGr.controls.firstname.touched && myFormGr.controls.firstname.invalid , 
+                      'has-success': myFormGr.controls.firstname.touched && myFormGr.controls.firstname.valid}" type="text" class="form-control" name="firstname" formControlName="firstname"     />
+                      {{myFormGr.controls.firstname.valid}}
+                      <div *ngIf="myFormGr.controls.firstname.touched && myFormGr.controls.firstname.invalid">
+                        <div *ngIf="myFormGr.controls.firstname.invalid && myFormGr.controls.firstname.errors.required" class="alert alert-danger">First name is mandatory</div>
+                        <div *ngIf="myFormGr.controls.firstname.invalid && myFormGr.controls.firstname.errors.minlength" class="alert alert-danger">First name must have minimum 6 characters</div>
+                    </div>
+                  <!--
+                      <div *ngIf="myForm.submitted && firstname.invalid">
+                          <div *ngIf="firstname.invalid && firstname.errors.required">First name is mandatory</div>
+                      </div>-->
+                  </div>
+                  <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" class="form-control" name="lastName" formControlName="lastname" />
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" name="email"  formControlName="myemail"/>
+                      
+                  </div>
+                            <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name="password" formControlName="mypassword" />
+                      
+                  </div>
+                  <div class="form-group">
+                      <button   class="btn btn-primary">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> 

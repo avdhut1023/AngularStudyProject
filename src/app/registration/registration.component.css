@@ -1,0 +1,7 @@
+.has-danger {
+    box-shadow:  0px 10px red;
+}
+
+.has-success {
+    box-shadow:  0px 10px green;
+}
