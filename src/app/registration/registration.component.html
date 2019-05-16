@@ -85,7 +85,55 @@
                   <div class="form-group">
                       <label for="email">Email</label>
                       <input type="email" class="form-control" name="email"  formControlName="myemail"/>
-                      
+                      <div *ngIf="myFormGr.controls.myemail.touched && myFormGr.controls.myemail.invalid">
+                        <div *ngIf="myFormGr.controls.myemail.invalid && myFormGr.controls.myemail.errors.email" class="alert alert-danger">Email is not valid</div>
+                        
+                    </div>
+                  </div>
+                  <div class="form-group">
+                        <label for="age">age</label>
+                        <input type="text" class="form-control" name="myage"  formControlName="myage"/>
+                        <div *ngIf="myFormGr.controls.myage.touched && myFormGr.controls.myage.invalid">
+                          <div *ngIf="myFormGr.controls.myage.invalid && myFormGr.controls.myage.errors.ageRange" class="alert alert-danger">Age is not valid</div>
+                          
+                      </div>
+                   </div>
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile</label>
+                        <input type="text" class="form-control" name="mobileNumber"  formControlName="mobileNumber"/>
+                        <div *ngIf="myFormGr.controls.mobileNumber.touched && myFormGr.controls.mobileNumber.invalid">
+                          <div *ngIf="myFormGr.controls.mobileNumber.invalid && myFormGr.controls.mobileNumber.errors.pattern" class="alert alert-danger">
+                             Mobile No. is not valid
+                           </div>
+                          
+                      </div>
+                      <div formGroupName="address">
+                            <h3>Address</h3>
+                            <div class="form-group">
+                            <label>
+                              Street:
+                              <input type="text" class="form-control" formControlName="street">
+                            </label>
+                          </div>
+                          <div class="form-group">
+                            <label>
+                              City:
+                              <input type="text" class="form-control" formControlName="city">
+                            </label>
+                            </div>
+                            <div class="form-group">
+                            <label>
+                              State:
+                              <input type="text" class="form-control" formControlName="state">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                              Zip Code:
+                              <input type="text" class="form-control" formControlName="zip">
+                            </label>
+                            </div>
+                          </div>
                   </div>
                             <div class="form-group">
                       <label for="password">Password</label>

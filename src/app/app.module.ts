@@ -11,13 +11,15 @@ import { PostsModule } from './posts/posts.module';
 import { CoreModule } from './core/core.module';
 import { AlbumsModule } from './albums/albums.module';
 import { RegistrationComponent } from './registration/registration.component';
+import { ExampleComponent } from './example/example.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ExampleComponent
 
   ],
   imports: [
