@@ -1,6 +1,6 @@
 export class Person {
-    firstname: string;
-    lastname: string;
+    public firstname: string;
+    public lastname: string;
     age: number;
 
     constructor(firstname, lastname) {

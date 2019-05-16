@@ -12,6 +12,7 @@ import { CoreModule } from './core/core.module';
 import { AlbumsModule } from './albums/albums.module';
 import { RegistrationComponent } from './registration/registration.component';
 import { ExampleComponent } from './example/example.component';
+import { PipeStudyComponent } from './pipe-study/pipe-study.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ExampleComponent } from './example/example.component';
     AppComponent,
     ProductComponent,
     RegistrationComponent,
-    ExampleComponent
+    ExampleComponent,
+    PipeStudyComponent
 
   ],
   imports: [

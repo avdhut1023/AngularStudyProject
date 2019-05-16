@@ -1,3 +1,9 @@
-<p *ngFor="let v of checkval">
-  {{v}}
-</p>
+<div *ngIf="isEnabled">
+ 
+  {{ 20*123 }} 
+  {{person.firstname+ '  '+ person.lastname}}
+</div>
+
+<button (click) = "firstMethod($event)"  class="btn btn-primary">Click Me!</button>
+<input (keypress) = "firstMethod($event)" [(ngModel)] = "firstname" name="inText" value="" />
+<!-- <img [src] = 'imgPath' /> -->

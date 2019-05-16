@@ -12,15 +12,17 @@ export class RegistrationComponent implements OnInit {
  /*  firstname: FormControl = new FormControl('');
   lastname: FormControl = new FormControl('');
  */
+  minAge: number = 0;
+  maxAge: number = 5;
   myFormGr: FormGroup;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.myFormGr = new FormGroup({
+    /*this.myFormGr = new FormGroup({
       firstname:  new FormControl('', [Validators.required, Validators.minLength(6)]),
       lastname:  new FormControl(''),
       myemail:  new FormControl('', Validators.email),
-      myage: new FormControl('', [this.ageRangeValidator]),
+      myage: new FormControl('', [this.ageRangeValidatorWithRange(this.minAge, this.maxAge)]),
       mobileNumber: new FormControl('', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       address: new FormGroup({
         street: new FormControl(''),
@@ -29,8 +31,8 @@ export class RegistrationComponent implements OnInit {
         zip: new FormControl('')
       }),
       mypassword: new FormControl('')
-    });
-/*
+    });*/
+
     this.myFormGr = this.fb.group({
       firstname:  ['', [Validators.required, Validators.minLength(6)]],
       lastname:  [''],
@@ -45,7 +47,7 @@ export class RegistrationComponent implements OnInit {
       }),
       mypassword: []
     });
-    */
+    
   }
 
   onSubmit() {
