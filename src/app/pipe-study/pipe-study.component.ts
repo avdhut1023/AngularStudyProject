@@ -26,6 +26,7 @@ export class PipeStudyComponent implements OnInit, OnDestroy {
   }
 
   getObservable() {
+    
     return interval(1000).pipe(
       take(10),
       map(v => v * v)

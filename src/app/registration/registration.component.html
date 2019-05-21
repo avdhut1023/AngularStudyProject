@@ -112,8 +112,12 @@
                             <div class="form-group">
                             <label>
                               Street:
-                              <input type="text" class="form-control" formControlName="street">
+                              <input type="text" class="form-control" formControlName="street" >
                             </label>
+                            <div *ngIf="myFormGr.get('address').controls.street.touched && myFormGr.get('address').controls.street.invalid">
+                              <div *ngIf="myFormGr.get('address').controls.street.invalid && myFormGr.get('address').controls.street.errors.required" class="alert alert-danger">First name is mandatory</div>
+                              <div *ngIf="myFormGr.get('address').controls.street.invalid && myFormGr.get('address').controls.street.errors.minlength" class="alert alert-danger">First name must have minimum 6 characters</div>
+                          </div>
                           </div>
                           <div class="form-group">
                             <label>

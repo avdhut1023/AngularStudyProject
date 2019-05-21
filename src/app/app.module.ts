@@ -13,6 +13,7 @@ import { AlbumsModule } from './albums/albums.module';
 import { RegistrationComponent } from './registration/registration.component';
 import { ExampleComponent } from './example/example.component';
 import { PipeStudyComponent } from './pipe-study/pipe-study.component';
+import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PipeStudyComponent } from './pipe-study/pipe-study.component';
     ProductComponent,
     RegistrationComponent,
     ExampleComponent,
-    PipeStudyComponent
+    PipeStudyComponent,
+    StructuralDirectiveComponent
 
   ],
   imports: [

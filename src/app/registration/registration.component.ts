@@ -37,10 +37,10 @@ export class RegistrationComponent implements OnInit {
       firstname:  ['', [Validators.required, Validators.minLength(6)]],
       lastname:  [''],
       myemail:  [''],
-      myage: ['', [this.ageRangeValidator]]
+      myage: ['', [this.ageRangeValidator]],
       mobileNumber: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
       address: this.fb.group({
-        street: [''],
+        street: ['', Validators.required],
         city: [''],
         state: [''],
         zip: ['']
@@ -57,7 +57,9 @@ export class RegistrationComponent implements OnInit {
     }
      alert('Success '); */
 
-      console.log(this.myFormGr.value);
+     // alert(this.myFormGr.get('firstname').value);
+      const address = this.myFormGr.get('address');
+      alert(address.get('street').value);
   }
 
    ageRangeValidator(control: AbstractControl): { [key: string]: boolean } | null {

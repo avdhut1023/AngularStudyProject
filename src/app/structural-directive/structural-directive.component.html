@@ -1,0 +1,52 @@
+<!--<ng-container *ngIf="isPresent">
+<div  *ngFor="let person of people">
+  {{ person.name }} ({{ person.country }})
+</div>
+</ng-container>-->
+<div *ngIf="isPresent; then truthyTemplate else falsyTemplate"></div>
+		<ng-template #truthyTemplate>
+			<h1>Condition Passed!</h1>
+		</ng-template>
+		<ng-template #falsyTemplate>
+			<h1>Condition Failed!</h1>
+    </ng-template>
+
+ <h4>NgSwitch</h4>
+<ul *ngFor="let person of people"
+    [ngSwitch]="country"> 
+
+  <li *ngSwitchCase="'UK'" 
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault 
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+  <h4>NgClass</h4>
+<ul *ngFor="let person of people">
+  <li [ngClass]="{
+    'text-success':person.country === 'UK',
+    'text-primary':person.country === 'USA',
+    'text-danger':person.country === 'HK'
+  }">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<div ngNonBindable>
+ <h4>NgClass Other Type</h4>
+<!--<ul *ngFor="let person of people">
+  <li [class.text-success]="person.country === 'UK'"
+      [class.text-primary]="person.country === 'USA'"
+      [class.text-danger]="person.country === 'HK'">{{ person.name }} ({{ person.country }})
+  </li>
+</ul> -->
+{{ country}}
+
+</div>
