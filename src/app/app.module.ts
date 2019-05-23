@@ -14,6 +14,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ExampleComponent } from './example/example.component';
 import { PipeStudyComponent } from './pipe-study/pipe-study.component';
 import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
+import { CustomDirectiveDirective } from './structural-directive/custom-directive.directive';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { StructuralDirectiveComponent } from './structural-directive/structural-
     RegistrationComponent,
     ExampleComponent,
     PipeStudyComponent,
-    StructuralDirectiveComponent
+    StructuralDirectiveComponent,
+    CustomDirectiveDirective
 
   ],
   imports: [
