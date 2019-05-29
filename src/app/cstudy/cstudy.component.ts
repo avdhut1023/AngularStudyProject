@@ -40,7 +40,6 @@ OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
     console.log('CStudy Component: OnChanges');
-    
   }
 
   ngOnInit() {
