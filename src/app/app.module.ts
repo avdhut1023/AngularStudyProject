@@ -15,6 +15,8 @@ import { ExampleComponent } from './example/example.component';
 import { PipeStudyComponent } from './pipe-study/pipe-study.component';
 import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 import { CustomDirectiveDirective } from './structural-directive/custom-directive.directive';
+import { CstudyComponent } from './cstudy/cstudy.component';
+import { ChildComponent } from './cstudy/child/child.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { CustomDirectiveDirective } from './structural-directive/custom-directiv
     ExampleComponent,
     PipeStudyComponent,
     StructuralDirectiveComponent,
-    CustomDirectiveDirective
+    CustomDirectiveDirective,
+    CstudyComponent,
+    ChildComponent
 
   ],
   imports: [
