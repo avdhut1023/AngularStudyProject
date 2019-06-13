@@ -19,8 +19,8 @@ export class AppComponent {
   constructor() {
     this.show = false;
 
-/*          // Create simple observable that emits three values
-      const myObservable = of(1, 2, 3);
+    // Create simple observable that emits three values
+      /*const myObservable = of(1, 2, 3);
       // Create observer object
       const myObserver = {
         next: x => console.log('Observer got a next value: ' + x),
@@ -30,34 +30,29 @@ export class AppComponent {
 
        // Execute with the observer object
       myObservable.subscribe(myObserver);
-      // Logs:
-      // Observer got a next value: 1
-      // Observer got a next value: 2
-      // Observer got a next value: 3
-      // Observer got a complete notification
+      
       // Create an Observable out of a promise
-const data = from(fetch('http://localhost:3004/posts'));
+    const data = from(fetch('http://localhost:3004/posts'));
 // Subscribe to begin listening for async result
-data.subscribe({
- next(response) { console.log(response); },
- error(err) { console.error('Error: ' + err); },
- complete() { console.log('Completed'); }
-});
-*/
-// Create an Observable that will publish a value on an interval
-/*const secondsCounter = interval(1000);
+     data.subscribe({
+            next(response) { console.log(response); },
+            error(err) { console.error('Error: ' + err); },
+            complete() { console.log('Completed'); }
+      });*/
+      // Create an Observable that will publish a value on an interval
+//const secondsCounter = interval(1000);
 // Subscribe to begin publishing values
-secondsCounter.subscribe(n =>
-  console.log(`It's been ${n} seconds since subscribing!`));
-
+  //secondsCounter.subscribe(n =>
+  //console.log(`It's been ${n} seconds since subscribing!`));
+/*
   const nums = of(1, 2, 3);
 
   const squareValues = map((val: number) => val * val);
   const squaredNums = squareValues(nums);
 
   squaredNums.subscribe(x => console.log(x));
-
 */
+
 
 
 // Create a function that accepts an Observable.

@@ -3,9 +3,48 @@
 
 </p>
 
-<p>
-  ((2+5))
-</p>
 <input type="text" value="" name="changeText" [(ngModel)]="testVal" />
 <button (click)="toggle()" >Show Child!</button>
-<app-child *ngIf="displayChild" [changeVal]="testVal"></app-child>
+
+<app-child *ngIf="displayChild" (childEvent)="getEmail($event)" [changeVal]="testVal"></app-child>
+
+<br />
+<div class="row">
+  <div class="col-6">
+      <div class="alert alert-danger" role="alert">
+        {{emittedEmail}}
+      </div>
+  </div>
+</div>
+<br />
+<app-child2></app-child2>
+<!--
+<ng-container
+  *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+</ng-container>
+
+<ng-template #loggedIn>
+  <div>
+    Welcome back, friend.
+  </div>
+</ng-template>
+<ng-template #loggedOut>
+  <div>
+    Please friend, login.
+  </div>
+</ng-template>
+
+<br />
+  <input name="samText" #sText />
+  
+  <button (click)="showText(sText.value)" >Show Text</button>
+
+
+<br />
+  <h2>ViewChild example</h2>
+  <div #divText>This is sample example for ViewChild.</div>
+  <button (click)="editViewChild()" >Edit ViewChild</button>
+<br />
+
+<button (click)="triggerService()" >Trigger Service</button>
+-->

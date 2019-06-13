@@ -5,4 +5,10 @@ export class GlobalService {
 
   constructor() { }
 
+  globalMethod(){
+    alert('inside global method');
+  }
 }
+
+
+

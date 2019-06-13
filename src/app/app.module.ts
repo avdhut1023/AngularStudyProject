@@ -17,6 +17,8 @@ import { StructuralDirectiveComponent } from './structural-directive/structural-
 import { CustomDirectiveDirective } from './structural-directive/custom-directive.directive';
 import { CstudyComponent } from './cstudy/cstudy.component';
 import { ChildComponent } from './cstudy/child/child.component';
+import { RxJsstudyComponent } from './rx-jsstudy/rx-jsstudy.component';
+import { Child2Component } from './cstudy/child2/child2.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ChildComponent } from './cstudy/child/child.component';
     StructuralDirectiveComponent,
     CustomDirectiveDirective,
     CstudyComponent,
-    ChildComponent
+    ChildComponent,
+    RxJsstudyComponent,
+    Child2Component
 
   ],
   imports: [
