@@ -15,7 +15,9 @@ export class PipeStudyComponent implements OnInit, OnDestroy {
   observable$: Observable<number>;
   subscription: Subscription = null;
   observableData: number;
-  
+  private dateVal: Date = new Date();
+  private jsonVal: Object = {moo: 'foo', goo: {too: 'new'}};
+
   constructor() { 
     this.promise = this.getPromise();
     this.observable$ = this.getObservable();

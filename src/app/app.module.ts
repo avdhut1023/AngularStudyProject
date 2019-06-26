@@ -23,6 +23,8 @@ import { LoginComponent } from './login/login.component';
 import { CanDeactivateGuard } from './can-deactivate.guard';
 import { CanActivateGuard } from './can-activate.guard';
 import { CanLoadGuard } from './can-load.guard';
+import { CustomPipeComponent } from './pipe-study/custom-pipe/custom-pipe.component';
+import { ProductFilterPipe } from './pipe-study/custom-pipe/product-filter.pipe';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { CanLoadGuard } from './can-load.guard';
     ChildComponent,
     RxJsstudyComponent,
     Child2Component,
-    LoginComponent
+    LoginComponent,
+    CustomPipeComponent,
+    ProductFilterPipe
 
   ],
   imports: [
