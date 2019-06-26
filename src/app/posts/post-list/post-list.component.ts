@@ -15,6 +15,7 @@ export class PostListComponent implements OnInit {
     this.postService.getPostList()
     .subscribe((response)=> {
       this.postlist = response;
+      console.log(this.postlist);
     });
 
   }

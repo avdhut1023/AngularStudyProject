@@ -19,6 +19,10 @@ import { CstudyComponent } from './cstudy/cstudy.component';
 import { ChildComponent } from './cstudy/child/child.component';
 import { RxJsstudyComponent } from './rx-jsstudy/rx-jsstudy.component';
 import { Child2Component } from './cstudy/child2/child2.component';
+import { LoginComponent } from './login/login.component';
+import { CanDeactivateGuard } from './can-deactivate.guard';
+import { CanActivateGuard } from './can-activate.guard';
+import { CanLoadGuard } from './can-load.guard';
 
 
 @NgModule({
@@ -33,7 +37,8 @@ import { Child2Component } from './cstudy/child2/child2.component';
     CstudyComponent,
     ChildComponent,
     RxJsstudyComponent,
-    Child2Component
+    Child2Component,
+    LoginComponent
 
   ],
   imports: [
@@ -46,7 +51,7 @@ import { Child2Component } from './cstudy/child2/child2.component';
     AlbumsModule,
     CoreModule
   ],
-  providers: [GlobalService],
+  providers: [GlobalService, CanDeactivateGuard, CanActivateGuard, CanLoadGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

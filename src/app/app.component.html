@@ -6,39 +6,43 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a routerLink="/postlist" class="nav-link" href="#">Posts <span class="sr-only">(current)</span></a>
+        <a routerLink="/post/postlist" routerLinkActive="route-class" class="nav-link" href="#">Posts <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a routerLink="/component-study" class="nav-link" href="#">Component</a>
+        <a routerLink="/component-study" routerLinkActive="route-class" class="nav-link" href="#">Component</a>
       </li>
       
       <!-- <li class="nav-item">
         <a routerLink="/albumlist" class="nav-link" href="#">Albums</a>
       </li> -->
       <li class="nav-item">
-        <a routerLink="/registration" class="nav-link" href="#">Registration</a>
+        <a routerLink="/registration" routerLinkActive="route-class" class="nav-link" href="#">Registration</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/example" class="nav-link" href="#">Example TypeScript</a>
+        <a routerLink="/example" routerLinkActive="route-class" class="nav-link" href="#">Example TypeScript</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/pipe-study" class="nav-link" href="#">Pipe Example</a>
+        <a routerLink="/pipe-study" routerLinkActive="route-class" class="nav-link" href="#">Pipe Example</a>
       </li>
       
       
       
       <li class="nav-item">
-        <a routerLink="/structural-directive" class="nav-link" href="#"> Directive  </a>
+        <a routerLink="/structural-directive" routerLinkActive="route-class" class="nav-link" href="#"> Directive  </a>
       </li>
-
+      <li class="nav-item">
+        <a routerLink="/album" routerLinkActive="route-class" class="nav-link" href="#"> Albums  </a>
+      </li>
        </ul>
   </div>
 </nav>
 
 
 <router-outlet></router-outlet>
+<router-outlet name="no2"></router-outlet>
+
 
 <!-- <p [hidden]="show">test value</p>
 <!-- <app-product></app-product> -->

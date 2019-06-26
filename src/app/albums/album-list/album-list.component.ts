@@ -18,6 +18,7 @@ export class AlbumListComponent implements OnInit {
         this.albumlist = response;
         console.log(this.albumlist);
       });
+      console.log('Album Component');
   }
 
 }

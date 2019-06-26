@@ -6,8 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class AlbumService {
 
   constructor(private httpService: HttpClientService, private http: HttpClient) { 
-    this.http.get('http://192.169.158.217:8080/PuneDuro/salesApp/get_materials.php').
-    subscribe((data) => console.log(data));
+    
 
   }
 
