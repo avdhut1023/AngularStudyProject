@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   minAge: number = 0;
   maxAge: number = 5;
   myFormGr: FormGroup;
+  email2: string;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -51,15 +52,16 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    /* if (!this.myForm.valid) {
+    console.log(this.myForm);
+     if (!this.myForm.valid) {
       alert('Form invalid');
       return false;
     }
-     alert('Success '); */
+     alert('Success '); 
 
      // alert(this.myFormGr.get('firstname').value);
-      const address = this.myFormGr.get('address');
-      alert(address.get('street').value);
+    //  const address = this.myFormGr.get('address');
+      //alert(address.get('street').value);
   }
 
    ageRangeValidator(control: AbstractControl): { [key: string]: boolean } | null {

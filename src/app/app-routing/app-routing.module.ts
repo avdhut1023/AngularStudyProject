@@ -13,7 +13,7 @@ import { AlbumsModule } from '../albums/albums.module';
 
 const routes: Routes = [
   {path: '', redirectTo: 'component-study', pathMatch: 'full'},
-  {path: 'registration', component: RegistrationComponent, canActivate: [CanActivateGuard]},
+  {path: 'registration', component: RegistrationComponent},
   {path: 'component-study', component: CstudyComponent, canDeactivate: [CanDeactivateGuard]},
   {path: 'example', component: ExampleComponent},
   {path: 'pipe-study', component: PipeStudyComponent},

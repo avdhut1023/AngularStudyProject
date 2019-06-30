@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CustomPipeComponent implements OnInit {
 
   public filter: string = '';
+  public filter2: string = '';
   public list:any[] = [{
     "ID": 1,
     "Name": "HD Video Player",

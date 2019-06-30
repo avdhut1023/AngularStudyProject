@@ -19,7 +19,7 @@
   <h4 class="card-title">Date</h4>
   <div class="card-text">
     <p ngNonBindable>{{ dateVal | date: 'shortTime' }}</p>
-    <p>{{ dateVal | date: 'shortTime' }}</p>
+    <p>{{ dateVal | date }}</p>
 
     <p ngNonBindable>{{ dateVal | date:'fullDate' }}</p>
     <p>{{ dateVal | date: 'fullDate' }}</p>
@@ -28,7 +28,7 @@
     <p>{{ dateVal | date: 'shortTime' }}</p>
 
     <p ngNonBindable>{{ dateVal | date: 'd/M/y' }}</p>
-    <p>{{ dateVal | date: 'd/M/y' }}</p>
+    <p>{{ dateVal | date: 'd/M/yy' }}</p>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
     <p>{{ 3.14159265 | number: '3.1-2' }}</p>
 
     <p ngNonBindable>{{ 3.14159265 | number: '1.4-4' }}</p>
-    <p>{{ 3.14159265 | number: '1.4-4' }}</p>
+    <p>{{ 3.141 | number: '1.4-4' }}</p>
   </div>
 </div>
 
@@ -58,8 +58,8 @@
 <div class="card card-block">
   <h4 class="card-title">LowerCasePipe</h4>
   <div class="card-text">
-    <p ngNonBindable>{{ 'ASIM' | lowercase }}</p>
-    <p>{{ 'ASIM' | lowercase }}</p>
+    <p ngNonBindable>{{ 'ASIM' | titlecase }}</p>
+    <p>{{ 'ASIM' | titlecase }}</p>
   </div>
 </div>
 
