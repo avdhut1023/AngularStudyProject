@@ -1,26 +1,24 @@
-import { Component, OnInit, ViewChildren } from '@angular/core';
-import { NgForm, FormControl, FormGroup, Validators, FormBuilder, AbstractControl, ValidatorFn } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Validators, AbstractControl, ValidatorFn, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: 'app-reactive-forms',
+  templateUrl: './reactive-forms.component.html',
+  styleUrls: ['./reactive-forms.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class ReactiveFormsComponent implements OnInit {
 
-  @ViewChildren('myForm') myForm: NgForm;
- /*  firstname: FormControl = new FormControl('');
+  myFormGr: FormGroup;
+  firstname: FormControl = new FormControl('pp');
   lastname: FormControl = new FormControl('');
- */
   minAge: number = 0;
   maxAge: number = 5;
-  myFormGr: FormGroup;
-  email2: string;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    /*this.myFormGr = new FormGroup({
-      firstname:  new FormControl('', [Validators.required, Validators.minLength(6)]),
+/*
+this.myFormGr = new FormGroup({
+      firstname:  new FormControl('Pss', [Validators.required, Validators.minLength(6)]),
       lastname:  new FormControl(''),
       myemail:  new FormControl('', Validators.email),
       myage: new FormControl('', [this.ageRangeValidatorWithRange(this.minAge, this.maxAge)]),
@@ -32,9 +30,9 @@ export class RegistrationComponent implements OnInit {
         zip: new FormControl('')
       }),
       mypassword: new FormControl('')
-    });*/
-
-    this.myFormGr = this.fb.group({
+    });
+*/
+     this.myFormGr = this.fb.group({
       firstname:  ['', [Validators.required, Validators.minLength(6)]],
       lastname:  [''],
       myemail:  [''],
@@ -48,23 +46,10 @@ export class RegistrationComponent implements OnInit {
       }),
       mypassword: []
     });
-    
+ 
   }
 
-  onSubmit(myForm: NgForm) {
-    console.log(myForm.valid);
-     if (!myForm.valid) {
-      alert('Form invalid');
-      return false;
-    }
-     alert('Success '); 
-
-     // alert(this.myFormGr.get('firstname').value);
-    //  const address = this.myFormGr.get('address');
-      //alert(address.get('street').value);
-  }
-
-   ageRangeValidator(control: AbstractControl): { [key: string]: boolean } | null {
+  ageRangeValidator(control: AbstractControl): { [key: string]: boolean } | null {
     if (control.value !== undefined && (isNaN(control.value) || control.value < 18 || control.value > 60)) {
         return { 'ageRange': true };
     }
@@ -80,4 +65,5 @@ export class RegistrationComponent implements OnInit {
       return null;
   };
 }
+
 }

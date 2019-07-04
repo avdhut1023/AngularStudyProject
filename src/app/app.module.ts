@@ -25,6 +25,9 @@ import { CanActivateGuard } from './can-activate.guard';
 import { CanLoadGuard } from './can-load.guard';
 import { CustomPipeComponent } from './pipe-study/custom-pipe/custom-pipe.component';
 import { ProductFilterPipe } from './pipe-study/custom-pipe/product-filter.pipe';
+import { ReactiveFormsComponent } from './registration/reactive-forms/reactive-forms.component';
+import { TemplateFormComponent } from './registration/template-form/template-form.component';
+import { AgeLimitValidatorDirective } from './registration/age-limit-validator.directive';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { ProductFilterPipe } from './pipe-study/custom-pipe/product-filter.pipe'
     Child2Component,
     LoginComponent,
     CustomPipeComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    ReactiveFormsComponent,
+    TemplateFormComponent,
+    AgeLimitValidatorDirective
 
   ],
   imports: [

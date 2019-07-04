@@ -17,7 +17,7 @@
       <div class="row">
           <div class="col-md-8 offset-md-2">
               <h3>Angular 6 Template-Driven Form Validation</h3>
-              <form name="form" #myForm="ngForm" (ngSubmit) = "onSubmit()">
+              <form name="form" #myForm="ngForm" (ngSubmit) = "onSubmit(myForm)">
                   <div class="form-group">
                       <label for="firstName">First Name*</label>
                       <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" #firstname="ngModel"   required minlength="6" />
@@ -37,10 +37,13 @@
                   </div>
                   <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="text" class="form-control" name="email" [(ngModel)]="email2" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" required email />
+                      <input type="text" class="form-control" name="email" [(ngModel)]="email2" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" required email  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                      />
                       <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
                           <div *ngIf="email.errors.required">Email is required</div>
                           <div *ngIf="email.errors?.email">Email must be a valid email address</div>
+                          <p *ngIf="email.errors?.pattern">This is not a valid Email Pattern!!!</p>
+
                       </div>
                   </div>
                   <div class="form-group">
@@ -62,7 +65,29 @@
                       <input type="password" class="form-control" name="password" [(ngModel)]="password" #mypassword="ngModel" minlength="6"/>
                       
                   </div>
-                   
+                  <div class="form-group">
+                    <input  type="radio"  [(ngModel)]="ugender" value="male" name="gender" #gender="ngModel" required > Male
+                    <input  type="radio" [(ngModel)]="ugender" value="female" name="gender" #gender="ngModel" required > Female
+                    <div *ngIf="gender.touched && gender.invalid"> 
+                      Gender required. 
+                  </div> 
+
+                  <div class="form-group">
+                    <label for="age">age</label>
+                    <input type="text" class="form-control" name="myage" appAgeLimitValidator  #myage="ngModel" [(ngModel)] = "age"/>
+                    <div *ngIf="myage.touched && myage.invalid">
+                      <div *ngIf="myage.invalid && myage.errors.ageRange" class="alert alert-danger">Age is not valid</div>
+                      
+                  </div>
+               </div>
+                  <div class="form-group">
+                    <input type="checkbox" name="tc" [(ngModel)]="utc" required #tc="ngModel"> T & C
+                      <div *ngIf="tc.touched && tc.invalid"> 
+                        Accept T & C.
+                      </div> 
+                  </div> 
+
+                  </div> 
                   <div class="form-group">
                       <button   class="btn btn-primary">Register</button>
                   </div>
@@ -72,6 +97,7 @@
   </div>
 </div> 
 
+<p>Form valid: {{ myForm.form.valid }}</p>
 
 
 <!-- main app container
@@ -282,3 +308,5 @@
   </div>
 </div> 
 -->
+
+<app-reactive-forms></app-reactive-forms>
