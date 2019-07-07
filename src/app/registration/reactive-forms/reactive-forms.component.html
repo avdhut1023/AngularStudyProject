@@ -60,7 +60,8 @@
                         <label for="age">age</label>
                         <input type="text" class="form-control" name="myage"  formControlName="myage"/>
                         <div *ngIf="myFormGr.controls.myage.touched && myFormGr.controls.myage.invalid">
-                          <div *ngIf="myFormGr.controls.myage.invalid && myFormGr.controls.myage.errors.ageRange" class="alert alert-danger">Age is not valid</div>
+                          <div *ngIf="myFormGr.controls.myage.invalid && myFormGr.controls.myage.errors.ageRange" class="alert alert-danger">
+                            Age is not valid</div>
                           
                       </div>
                    </div>

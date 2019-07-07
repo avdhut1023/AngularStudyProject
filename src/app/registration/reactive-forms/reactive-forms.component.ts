@@ -15,8 +15,8 @@ export class ReactiveFormsComponent implements OnInit {
   maxAge: number = 5;
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
-/*
+  ngOnInit() {/* 
+
 this.myFormGr = new FormGroup({
       firstname:  new FormControl('Pss', [Validators.required, Validators.minLength(6)]),
       lastname:  new FormControl(''),
@@ -30,8 +30,8 @@ this.myFormGr = new FormGroup({
         zip: new FormControl('')
       }),
       mypassword: new FormControl('')
-    });
-*/
+    }); */
+
      this.myFormGr = this.fb.group({
       firstname:  ['', [Validators.required, Validators.minLength(6)]],
       lastname:  [''],
@@ -45,10 +45,9 @@ this.myFormGr = new FormGroup({
         zip: ['']
       }),
       mypassword: []
-    });
- 
+    }, Validators.required);
   }
-
+//ValidatorFn
   ageRangeValidator(control: AbstractControl): { [key: string]: boolean } | null {
     if (control.value !== undefined && (isNaN(control.value) || control.value < 18 || control.value > 60)) {
         return { 'ageRange': true };
@@ -64,6 +63,10 @@ this.myFormGr = new FormGroup({
       }
       return null;
   };
+}
+
+public onSubmit(){
+  alert(this.myFormGr.valid);
 }
 
 }
