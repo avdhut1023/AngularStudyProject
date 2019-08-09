@@ -28,6 +28,8 @@ import { ProductFilterPipe } from './pipe-study/custom-pipe/product-filter.pipe'
 import { ReactiveFormsComponent } from './registration/reactive-forms/reactive-forms.component';
 import { TemplateFormComponent } from './registration/template-form/template-form.component';
 import { AgeLimitValidatorDirective } from './registration/age-limit-validator.directive';
+import { CustomBlankDirective } from './registration/custom-blank.directive';
+import { MycompComponent } from './mycomp/mycomp.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { AgeLimitValidatorDirective } from './registration/age-limit-validator.d
     ProductFilterPipe,
     ReactiveFormsComponent,
     TemplateFormComponent,
-    AgeLimitValidatorDirective
+    AgeLimitValidatorDirective,
+    CustomBlankDirective,
+    MycompComponent
 
   ],
   imports: [

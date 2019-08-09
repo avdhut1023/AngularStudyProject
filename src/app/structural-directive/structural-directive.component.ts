@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructuralDirectiveComponent implements OnInit {
 
- mycolor: string = 'green';
+ mycolor: string = 'yellow';
   country: 'UK';
   isPresent: boolean = false;
   people: any[] = [

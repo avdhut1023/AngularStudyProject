@@ -8,9 +8,9 @@ export class HttpClientService {
   constructor(private httpService: HttpClient) { }
 
   get(url) {
-    const headers = new HttpHeaders();
+    const headers2 = new HttpHeaders();
     return this.httpService.get(this.baseApi + url, {
-        headers: headers
+        headers: headers2
     });
 }
 

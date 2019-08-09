@@ -1,9 +1,27 @@
-<div *ngIf="isEnabled">
- 
-  {{ 20*123 }} 
-  {{person.firstname+ '  '+ person.lastname}}
+<div class="row">
+<div class="col-3">
+  <ul class="nav nav-pills flex-column">
+    <li class="nav-item active"><a class="nav-link active" href="#">Home</a></li>
+    <li class="nav-item "><a class="nav-link" href="#">Menu 1</a></li>
+    <li class="nav-item "><a class="nav-link" href="#">Menu 2</a></li>
+    <li class="nav-item "><a class="nav-link" href="#">Menu 3</a></li>
+  </ul>
 </div>
-
-<button (click) = "firstMethod($event)"  class="btn btn-primary">Click Me!</button>
-<input (keypress) = "firstMethod($event)" [(ngModel)] = "firstname" name="inText" value="" />
-<!-- <img [src] = 'imgPath' /> -->
+<div class="col-9">
+  <div>
+ 
+    {{ 20*123 }} 
+    <h1>{{ mcar.name}}</h1>
+    <h1>{{ newCar.name}}</h1>
+  
+    <h1>{{ calc2.add() }}</h1>
+   
+  </div>
+  
+  <button (click) = "firstMethod($event)"  class="btn btn-primary">Click Me!</button>
+  <input (keypress) = "firstMethod($event)" [(ngModel)] = "firstname" name="inText" value="" />
+  <h3>{{firstname}}</h3>
+  
+  <!-- <img [src] = 'imgPath' /> -->
+  </div>
+</div>

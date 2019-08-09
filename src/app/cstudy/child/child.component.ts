@@ -27,8 +27,6 @@ export class ChildComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit() {
   }
 
-
-
   ngOnChanges(changes: SimpleChanges) {
     console.log('CStudy Component: OnChanges');
     // tslint:disable-next-line:forin
