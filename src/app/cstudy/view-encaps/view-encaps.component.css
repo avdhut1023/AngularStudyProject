@@ -1,0 +1,11 @@
+p.encaps-example {
+    border: 2px solid greenyellow;
+    border-radius: 20%;
+}
+
+.example-card-title{
+    font-family: Monospace;
+    font-style: italic;
+    color: seagreen;
+
+}

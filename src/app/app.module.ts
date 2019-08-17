@@ -30,6 +30,13 @@ import { TemplateFormComponent } from './registration/template-form/template-for
 import { AgeLimitValidatorDirective } from './registration/age-limit-validator.directive';
 import { CustomBlankDirective } from './registration/custom-blank.directive';
 import { MycompComponent } from './mycomp/mycomp.component';
+import { InterfaceTestComponent } from './example/interface-test/interface-test.component';
+import { TypeExampleComponent } from './example/type-example/type-example.component';
+import { IfForExampleComponent } from './example/if-for-example/if-for-example.component';
+import { WithTemplateComponent } from './cstudy/with-template/with-template.component';
+import { ViewEncapsComponent } from './cstudy/view-encaps/view-encaps.component';
+import { ViewCapsChildComponent } from './cstudy/view-caps-child/view-caps-child.component';
+import { TemplateRefVarComponent } from './cstudy/template-ref-var/template-ref-var.component';
 
 
 @NgModule({
@@ -52,7 +59,14 @@ import { MycompComponent } from './mycomp/mycomp.component';
     TemplateFormComponent,
     AgeLimitValidatorDirective,
     CustomBlankDirective,
-    MycompComponent
+    MycompComponent,
+    InterfaceTestComponent,
+    TypeExampleComponent,
+    IfForExampleComponent,
+    WithTemplateComponent,
+    ViewEncapsComponent,
+    ViewCapsChildComponent,
+    TemplateRefVarComponent
 
   ],
   imports: [

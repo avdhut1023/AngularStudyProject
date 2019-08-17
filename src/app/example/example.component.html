@@ -1,13 +1,13 @@
-<div class="row">
+  <div class="row">
 <div class="col-3">
   <ul class="nav nav-pills flex-column">
-    <li class="nav-item active"><a class="nav-link active" href="#">Home</a></li>
-    <li class="nav-item "><a class="nav-link" href="#">Menu 1</a></li>
-    <li class="nav-item "><a class="nav-link" href="#">Menu 2</a></li>
-    <li class="nav-item "><a class="nav-link" href="#">Menu 3</a></li>
+    <li class="nav-item active" (click)="exampleVar='Class'"><button class="btn btn-primary">Class Example</button></li>
+    <li class="nav-item " (click)="exampleVar='Interface'"><button class="btn btn-primary">Interface Example</button></li>
+    <li class="nav-item " (click)="exampleVar='Types'"><button class="btn btn-primary">Types</button></li>
+    <li class="nav-item " (click)="exampleVar='IfFor'"><button class="btn btn-primary">If and Loops</button></li>
   </ul>
 </div>
-<div class="col-9">
+<div *ngIf="exampleVar=='Class'" class="col-9">
   <div>
  
     {{ 20*123 }} 
@@ -22,6 +22,23 @@
   <input (keypress) = "firstMethod($event)" [(ngModel)] = "firstname" name="inText" value="" />
   <h3>{{firstname}}</h3>
   
-  <!-- <img [src] = 'imgPath' /> -->
+  </div>
+  <div class="col-9" *ngIf="exampleVar=='Interface'">
+    <app-interface-test></app-interface-test>
+  </div>
+  <div class="col-9" *ngIf="exampleVar=='Types'">
+    <app-type-example></app-type-example>
+  </div>
+  <div class="col-9" *ngIf="exampleVar=='IfFor'">
+    <app-if-for-example></app-if-for-example>
   </div>
 </div>
+<div *ngIf = "valBool && valBool2">
+  <h1>First Condition True</h1>
+</div>
+<div *ngIf = "valBool2">
+  <h1>Second Condition True</h1>
+</div>
+
+<button class="btn btn-primary"(click)="showFirst()">Show First</button>
+<button class="btn btn-primary"(click)="showSecond()">Show Second</button>

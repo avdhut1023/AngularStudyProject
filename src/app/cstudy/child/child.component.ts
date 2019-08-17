@@ -2,12 +2,11 @@ import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges, Input,
    OnDestroy, Output, EventEmitter } from '@angular/core';
 import { CstudyService } from '../cstudy.service';
 
-
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css']
-  
+  styles: ['./child.component.css']
+
 })
 export class ChildComponent implements OnInit, OnChanges, OnDestroy {
 
@@ -28,7 +27,7 @@ export class ChildComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('CStudy Component: OnChanges');
+    console.log('Child Component: OnChanges');
     // tslint:disable-next-line:forin
     for (let propName in changes) {
       let chng = changes[propName];

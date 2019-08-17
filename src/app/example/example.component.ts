@@ -16,6 +16,8 @@ export class ExampleComponent  implements OnInit {
   arr: number[] = [1, 2];
   isEnabled: boolean = false;
   person = new Person('Abc', 'Xyz');
+  valBool: boolean = true;
+  valBool2: boolean = false;
   emp = new Employee();
   checkval: any[] = [
       1,
@@ -30,7 +32,7 @@ export class ExampleComponent  implements OnInit {
   mcar: Car = new Car('1233');
   newCar: MyCar = new MyCar();
   calc2: Calculator = new Calculator(30, 40);
-  
+  exampleVar: string = 'Class';
   constructor() {
     //super('', '');
    }
@@ -145,6 +147,8 @@ class Cat extends Animal {
     console.log(this.eyes+ ' '+ this.legs);
     console.log(this.getEyes()+ ' '+ this.getLegs());
   }
+
+  p
 }
 /*
     let person = new Person('Abc', 'Xyz');

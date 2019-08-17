@@ -1,12 +1,109 @@
-<div class="card" style="width: 18rem;" [appCustomDirective]="mycolor" [highlightColor]="'tomato'">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+<div class="row">
+    <div class="col-3">
+      <ul class="list-group">
+        <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'ngif')" class="list-group-item list-group-item-action active">
+          *ngIf
+        </a></li>
+        <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'ngfor')" class="list-group-item list-group-item-action active">
+          *NgFor
+        </a></li>
+        <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'ngswitch')" class="list-group-item list-group-item-action active">
+          *ngSwitch
+        </a></li>
+        <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'custom')" class="list-group-item list-group-item-action active">
+            Custom Directive
+          </a></li>
+      </ul>
+      
+    </div>
+    <div class="col-9" *ngIf="showComponent==='ngif'">
+      
+        <input [(ngModel)]="toggle" type="checkbox"/> Show My Content
+
+        <hr />
+        
+        <div *ngIf="toggle; else prompt">
+          Congratulations, you've reached the secret bonus level!
+        </div>
+        
+        <ng-template #prompt>
+          Click the checkbox above to reveal hidden content!
+        </ng-template>
+        <!--<ng-container
+        *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+      </ng-container>
+  
+      <ng-template #loggedIn>
+        <div>
+          Welcome back, friend.
+        </div>
+      </ng-template>
+      <ng-template #loggedOut>
+        <div>
+          Please friend, login.
+        </div>
+      </ng-template>
+  -->
+        </div>
+  
+        
+       
+    <div class="col-9" *ngIf="showComponent==='ngfor'">
+        <div *ngFor = "let title of fetchData">
+            {{title.title}} -- {{title.description}} -- {{title.tagline}} {{title.date}}
+          </div>
+        
+          <ul>
+              <li *ngFor="let number of [0,1,2,3,4]">{{number}}</li>
+            </ul>
+
+            
+        
+    </div>
+
+    <div class="col-9" *ngIf="showComponent==='ngswitch'">
+      <h3>ngSwitch Basic</h3>
+      <div [ngSwitch]="1">
+          <h1 *ngSwitchCase="1">1</h1>
+          <h1 *ngSwitchCase="2">2</h1>
+          <h1 *ngSwitchDefault>default</h1>    
+        </div>
+
+        <h4>NgSwitch</h4>
+        <ul *ngFor="let person of people"
+            [ngSwitch]="person.country"> 
+        
+          <li *ngSwitchCase="'UK'" 
+              class="text-success">{{ person.name }} ({{ person.country }})
+          </li>
+          <li *ngSwitchCase="'USA'"
+              class="text-primary">{{ person.name }} ({{ person.country }})
+          </li>
+          <li *ngSwitchCase="'HK'"
+              class="text-danger">{{ person.name }} ({{ person.country }})
+          </li>
+          <li *ngSwitchDefault 
+              class="text-warning">{{ person.name }} ({{ person.country }})
+          </li>
+        </ul>
+
+        
+      </div>
+
+      <div class="col-9" *ngIf="showComponent=='custom'">
+          <div class="card" style="width: 18rem;" [appCustomDirective]="mycolor" [highlightColor]="'tomato'">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+            
+      </div>
+        
+    </div>
 
 
 

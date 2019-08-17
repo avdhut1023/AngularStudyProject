@@ -18,7 +18,7 @@ import { GlobalService } from '../global.service';
   selector: 'app-cstudy',
   templateUrl: './cstudy.component.html',
   styleUrls: ['./cstudy.component.css'],
-  encapsulation: ViewEncapsulation.Emulated,
+ // encapsulation: ViewEncapsulation.Emulated,
   //interpolation: ['((', '))'],
   providers: [CstudyService]
 })
@@ -32,11 +32,15 @@ AfterViewInit,
 AfterViewChecked,
 OnDestroy {
 
+  showComponent: string = 'WithTemplate';
   @ViewChild('divText') dText: ElementRef;
   @ViewChild('sText') sText: ElementRef;
   testVal: string = 'Sample Value';
   displayChild: boolean = true;
   emittedEmail: string;
+  num1: number = 0;
+  num2: number = 0;
+
   constructor(private cstudyService: CstudyService, private globalService: GlobalService) { 
     console.log('CStudy Component: Constructor');
   }
@@ -62,14 +66,15 @@ OnDestroy {
     console.log('CStudy Component: OnInit');
   }
 
-  ngDoCheck() {
-    console.log('CStudy Component: DoCheck');
-  }
-
   ngAfterContentInit() {
     console.log('CStudy Component: AfterContentInit');
   }
 
+  ngDoCheck() {
+    console.log('CStudy Component: DoCheck');
+  }
+
+  
   ngAfterContentChecked() {
   console.log('CStudy Component:AfterContentChecked');
   }
@@ -97,5 +102,9 @@ OnDestroy {
     this.dText.nativeElement.style.fontSize = '20px';
   }
 
-  
+  setComponent(event, type: string) {
+    event.preventDefault();
+
+    this.showComponent = type;
+  }
 }

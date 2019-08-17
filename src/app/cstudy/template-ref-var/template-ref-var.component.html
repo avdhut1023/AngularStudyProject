@@ -1,0 +1,12 @@
+<br />
+      <input name="samText" #sText />
+      
+      <button (click)="showText(sText.value)" >Show Text</button>
+      <br />
+    {{sText.value}}
+
+    <br />
+      <h2>ViewChild example</h2>
+      <div #divText>This is sample example for ViewChild.</div>
+      <button (click)="editViewChild()" >Edit ViewChild</button>
+    <br />

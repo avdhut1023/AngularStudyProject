@@ -1,50 +1,101 @@
-<p>
-  cstudy works ((testVal))!
-
-</p>
-
-<input type="text" value="" name="changeText" [(ngModel)]="testVal" />
-<button (click)="toggle()" >Show Child!</button>
-
-<app-child *ngIf="displayChild" (childEvent)="getEmail($event)" [changeVal]="testVal"></app-child>
-
-<br />
 <div class="row">
-  <div class="col-6">
-      <div class="alert alert-danger" role="alert">
-        {{emittedEmail}}
-      </div>
-  </div>
-</div>
-<br />
-<app-child2></app-child2>
-<!--
-<ng-container
-  *ngIf="isLoggedIn; then loggedIn; else loggedOut">
-</ng-container>
-
-<ng-template #loggedIn>
-  <div>
-    Welcome back, friend.
-  </div>
-</ng-template>
-<ng-template #loggedOut>
-  <div>
-    Please friend, login.
-  </div>
-</ng-template>
-
-<br />
-  <input name="samText" #sText />
+<div class="col-3">
+  <ul class="list-group">
+    <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'WithTemplate')" class="list-group-item list-group-item-action active">
+      Component with Template
+    </a></li>
+    <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'ReferenceVariable')" class="list-group-item list-group-item-action active">
+      Reference Variables
+    </a></li>
+    <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'VeiwEncapsulation')" class="list-group-item list-group-item-action active">
+      Veiw Encapsulation
+    </a></li>
+    <li class="list-group-item"><a href="#" (click)="setComponent($event , 'LifeCycleHooks')" class="list-group-item list-group-item-action active">
+        Life Cycle Hooks
+      </a></li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
   
-  <button (click)="showText(sText.value)" >Show Text</button>
+</div>
+<div class="col-9" *ngIf="showComponent==='WithTemplate'">
+  <app-with-template></app-with-template>
+</div>
+
+<div class="col-9" *ngIf="showComponent==='ReferenceVariable'">
+    <app-template-ref-var></app-template-ref-var>
+  </div>
+<div class="col-9" *ngIf="showComponent==='LifeCycleHooks'">
+    <!--<p class="myClass">
+      cstudy works ((testVal))!
+
+    </p>
+    <input type="text" [(ngModel)] = "num1"  name="mn1"/>
+    <input type="text" [(ngModel)] = "num2" name="mn2"/>
+    Addition - {{ num1*1+num2*1 }}  <br />
+    Substraction - {{num1-num2}}  <br />
+    Multilplication - {{num1*num2}}  <br />-->
+    <h1> Life Cycle Hooks</h1>
+    <input type="text" value="" name="changeText" [(ngModel)]="testVal" />
+    <button (click)="toggle()" >Show Child!</button>
+
+    <app-child *ngIf="displayChild" (childEvent)="getEmail($event)" [changeVal]="testVal"></app-child>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-6">
+          <div class="alert alert-danger" role="alert">
+            {{emittedEmail}}
+          </div>
+      </div>
+    </div>
+    <br />
+    <app-child2></app-child2>
+    <!--
+    <ng-container
+      *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+    </ng-container>
+
+    <ng-template #loggedIn>
+      <div>
+        Welcome back, friend.
+      </div>
+    </ng-template>
+    <ng-template #loggedOut>
+      <div>
+        Please friend, login.
+      </div>
+    </ng-template>
+
+    <br />
+      <input name="samText" #sText />
+      
+      <button (click)="showText(sText.value)" >Show Text</button>
 
 
-<br />
-  <h2>ViewChild example</h2>
-  <div #divText>This is sample example for ViewChild.</div>
-  <button (click)="editViewChild()" >Edit ViewChild</button>
-<br />
+    <br />
+      <h2>ViewChild example</h2>
+      <div #divText>This is sample example for ViewChild.</div>
+      <button (click)="editViewChild()" >Edit ViewChild</button>
+    <br />
 
-<button (click)="triggerService()" >Trigger Service</button>
--->
+    <button (click)="triggerService()" >Trigger Service</button>
+    -->
+
+    </div>
+
+    <!--Code for view Encapsulation of the component-->
+    <div class="col-9" *ngIf="showComponent==='VeiwEncapsulation'">
+      <h1>View Encapsulation</h1>
+      <h3>Defines template and style encapsulation options available for Component's Component.
+        </h3>
+      <p class="encaps-example">Inside the Parent component</p>
+      <app-view-encaps ></app-view-encaps>
+      
+    </div>
+
+</div>

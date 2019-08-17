@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructuralDirectiveComponent implements OnInit {
 
+  showComponent: string = 'ngif';
  mycolor: string = 'yellow';
   country: 'UK';
   isPresent: boolean = false;
@@ -37,11 +38,20 @@ export class StructuralDirectiveComponent implements OnInit {
       'country': 'USA'
     }
   ];
+  toggle: boolean;
+  fetchData = [{'title':'saurabh','description':'dd','tagline':'tt','date':'dd'},
+  {'title':'aman','description':'dd','tagline':'tt','date':'dd'},
+  {'title':'jessica','description':'dd','tagline':'tt','date':'dd'},
+  {'title':'rosh','description':'dd','tagline':'tt','date':'dd'}];
   constructor() { }
 
   ngOnInit() {
   }
 
+  setComponent(event, type: string) {
+    event.preventDefault();
 
+    this.showComponent = type;
+  }
 
 }
