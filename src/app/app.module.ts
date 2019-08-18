@@ -37,6 +37,8 @@ import { WithTemplateComponent } from './cstudy/with-template/with-template.comp
 import { ViewEncapsComponent } from './cstudy/view-encaps/view-encaps.component';
 import { ViewCapsChildComponent } from './cstudy/view-caps-child/view-caps-child.component';
 import { TemplateRefVarComponent } from './cstudy/template-ref-var/template-ref-var.component';
+import { HighlightService } from './highlight.service';
+import { StyleClassComponent } from './structural-directive/style-class/style-class.component';
 
 
 @NgModule({
@@ -66,7 +68,8 @@ import { TemplateRefVarComponent } from './cstudy/template-ref-var/template-ref-
     WithTemplateComponent,
     ViewEncapsComponent,
     ViewCapsChildComponent,
-    TemplateRefVarComponent
+    TemplateRefVarComponent,
+    StyleClassComponent
 
   ],
   imports: [
@@ -79,7 +82,7 @@ import { TemplateRefVarComponent } from './cstudy/template-ref-var/template-ref-
     AlbumsModule,
     CoreModule
   ],
-  providers: [GlobalService, CanDeactivateGuard, CanActivateGuard, CanLoadGuard],
+  providers: [GlobalService, CanDeactivateGuard, CanActivateGuard, CanLoadGuard, HighlightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

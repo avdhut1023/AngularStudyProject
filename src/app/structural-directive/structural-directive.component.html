@@ -10,6 +10,9 @@
         <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'ngswitch')" class="list-group-item list-group-item-action active">
           *ngSwitch
         </a></li>
+        <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'style-class')" class="list-group-item list-group-item-action active">
+            ngStyle & ngClass
+          </a></li>
         <li class="list-group-item" > <a href="#" (click)="setComponent($event , 'custom')" class="list-group-item list-group-item-action active">
             Custom Directive
           </a></li>
@@ -21,15 +24,23 @@
         <input [(ngModel)]="toggle" type="checkbox"/> Show My Content
 
         <hr />
+        {{toggle}}
+        <br />
+        <div *ngIf="!toggle" >
+          Normal ngIf
+        </div>
         
         <div *ngIf="toggle; else prompt">
           Congratulations, you've reached the secret bonus level!
         </div>
         
         <ng-template #prompt>
-          Click the checkbox above to reveal hidden content!
+          <p>Paragraph added</p>Click the checkbox above to reveal hidden content!
         </ng-template>
-        <!--<ng-container
+      <br />
+        <input [(ngModel)]="isLoggedIn" type="checkbox"/> Login checkbox
+        
+        <ng-container
         *ngIf="isLoggedIn; then loggedIn; else loggedOut">
       </ng-container>
   
@@ -38,32 +49,62 @@
           Welcome back, friend.
         </div>
       </ng-template>
+
       <ng-template #loggedOut>
         <div>
           Please friend, login.
         </div>
       </ng-template>
-  -->
-        </div>
-  
+
+      Enter price <input [(ngModel)]="ifPrice" type="text"/> 
         
+        <ng-container
+        *ngIf="ifPrice > 50; then greater50; else less50">
+      </ng-container>
+        <ng-template #greater50>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Price > 50</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+        </div>
+      </ng-template>
+
+      <ng-template #less50>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Price < 50</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text text text-danger">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+        </div>
+      </ng-template>
+  
+        </div>
+          
        
     <div class="col-9" *ngIf="showComponent==='ngfor'">
-        <div *ngFor = "let title of fetchData">
-            {{title.title}} -- {{title.description}} -- {{title.tagline}} {{title.date}}
+        <div *ngFor = "let obj of fetchData">
+            {{obj.title}} -- {{obj.description}} -- {{obj.tagline}} {{obj.date}}
           </div>
         
           <ul>
-              <li *ngFor="let number of [0,1,2,3,4]">{{number}}</li>
-            </ul>
-
-            
-        
+              <li *ngFor="let number of num1">{{number}}</li>
+            </ul>       
     </div>
 
     <div class="col-9" *ngIf="showComponent==='ngswitch'">
       <h3>ngSwitch Basic</h3>
-      <div [ngSwitch]="1">
+      <div [ngSwitch]="5">
           <h1 *ngSwitchCase="1">1</h1>
           <h1 *ngSwitchCase="2">2</h1>
           <h1 *ngSwitchDefault>default</h1>    
@@ -74,7 +115,7 @@
             [ngSwitch]="person.country"> 
         
           <li *ngSwitchCase="'UK'" 
-              class="text-success">{{ person.name }} ({{ person.country }})
+              class="text-success">{{ person.age }} ({{ person.country }})
           </li>
           <li *ngSwitchCase="'USA'"
               class="text-primary">{{ person.name }} ({{ person.country }})
@@ -89,7 +130,10 @@
 
         
       </div>
-
+<!--app-style-class-->
+<div class="col-9" *ngIf="showComponent==='style-class'">
+  <app-style-class></app-style-class>
+</div>
       <div class="col-9" *ngIf="showComponent=='custom'">
           <div class="card" style="width: 18rem;" [appCustomDirective]="mycolor" [highlightColor]="'tomato'">
               <div class="card-body">

@@ -1,0 +1,65 @@
+<h2>NgStyle</h2>
+
+  <pre class="highlight language-html">
+    <code class="language-html">
+&lt;div [ngStyle]="{{ '{'}} 'background-color':'green'{{ '}'}}" &gt; This div has background color green &lt;/div&gt;
+    </code>
+  </pre>
+
+<div [ngStyle]="{'background-color':'green'}">This div has background color green</div>
+
+
+<pre class="highlight language-html">
+    <code class="language-html">
+&lt;div [ngStyle]="{{ '{'}} 'background-color':styleCondition == true? 'gold':'tomato'{{ '}'}}, 
+border: styleCondition == true? '3px solid green': '3px dashed yellow'" &gt; 
+  This div has background color green 
+&lt;/div&gt;
+    </code>
+  </pre>
+<label for="changeStyle" class="btn btn-success active">
+  <input type="checkbox" id="changeStyle" [(ngModel)] = "styleCondition" name="style">
+  <span class="glyphicon glyphicon-ok"></span>
+
+</label>
+<div [ngStyle]="{'background-color':styleCondition == true? 'gold':'tomato', border: styleCondition == true? '3px solid green': '3px dashed yellow'}">This div has background color green</div>
+<br />
+<h2> style property for single property </h2>
+<pre class="highlight language-html">
+    <code class="language-html">
+        [style.color]="getColor()"    </code>
+  </pre>
+
+<div [style.color]="getColor()">This div has background color green</div>
+
+
+<br />
+<h2>NgStyle</h2>
+<pre class="highlight language-html">
+    <code class="language-html">
+        &lt;div [ngClass]=&quot;{{'{'}}text-success':styleCondition,'text-danger': !styleCondition{{'}'}}&quot;&gt;Ng Style changes the class of the given element&lt;/div&gt;
+
+    </code>
+  </pre>
+<label for="changeStyle" class="btn btn-success active">
+  <input type="checkbox" id="changeStyle" [(ngModel)] = "styleCondition" name="style">
+  <span class="glyphicon glyphicon-ok"></span>
+
+</label>
+<div [ngClass]="{'text-success':styleCondition,'text-danger': !styleCondition}">Ng Style changes the class of the given element</div>
+
+<pre class="highlight language-html">
+    <code class="language-html">
+      <p>Style with multiple Classes</p>
+        [ngClass]="{{'{' }}alert alert-success alert-dismissible fade show': styleCondition,
+        'alert alert-warning alert-dismissible fade show':!styleCondition {{'}' }}"
+
+    </code>
+  </pre>
+
+
+<div [ngClass]="{'alert alert-success alert-dismissible fade show': styleCondition,
+                  'alert alert-warning alert-dismissible fade show':!styleCondition }">
+    <strong>Success!</strong> Your message has been sent successfully.
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>

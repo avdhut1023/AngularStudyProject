@@ -38,14 +38,24 @@ export class StructuralDirectiveComponent implements OnInit {
       'country': 'USA'
     }
   ];
+  isLoggedIn: boolean;
+  ifPrice: number = 0;
   toggle: boolean;
-  fetchData = [{'title':'saurabh','description':'dd','tagline':'tt','date':'dd'},
+  num1: number[] = [20, 100, 2002, 3028];
+  str1: string[] = ['1', 'asd', 'dfg', 'hjk'];
+  num2 = [0,1,2,3];
+  fetchData = [
+    {'title':'saurabh','description':'dd','tagline':'tt','date':'dd'},
   {'title':'aman','description':'dd','tagline':'tt','date':'dd'},
   {'title':'jessica','description':'dd','tagline':'tt','date':'dd'},
-  {'title':'rosh','description':'dd','tagline':'tt','date':'dd'}];
+  {'title':'rosh','description':'dd','tagline':'tt','date':'dd'}
+];
   constructor() { }
 
   ngOnInit() {
+    this.num1 = this.num2;
+    console.log(this.num1[2]);
+    this.num2 = [];
   }
 
   setComponent(event, type: string) {
