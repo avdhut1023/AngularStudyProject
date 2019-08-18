@@ -1,56 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-structural-directive',
-  templateUrl: './structural-directive.component.html',
-  styleUrls: ['./structural-directive.component.css']
+  selector: "app-structural-directive",
+  templateUrl: "./structural-directive.component.html",
+  styleUrls: ["./structural-directive.component.css"]
 })
 export class StructuralDirectiveComponent implements OnInit {
-
-  showComponent: string = 'ngif';
- mycolor: string = 'yellow';
-  country: 'UK';
+  showComponent: string = "ngif";
+  mycolor: string = "yellow";
+  country: "UK";
   isPresent: boolean = false;
   people: any[] = [
     {
-      'name': 'Douglas  Pace',
-      'age': 35,
-      'country': 'MARS'
+      name: "Douglas  Pace",
+      age: 35,
+      country: "MARS"
     },
     {
-      'name': 'Mcleod  Mueller',
-      'age': 32,
-      'country': 'USA'
+      name: "Mcleod  Mueller",
+      age: 32,
+      country: "USA"
     },
     {
-      'name': 'Day  Meyers',
-      'age': 21,
-      'country': 'HK'
+      name: "Day  Meyers",
+      age: 21,
+      country: "HK"
     },
     {
-      'name': 'Aguirre  Ellis',
-      'age': 34,
-      'country': 'UK'
+      name: "Aguirre  Ellis",
+      age: 34,
+      country: "UK"
     },
     {
-      'name': 'Cook  Tyson',
-      'age': 32,
-      'country': 'USA'
+      name: "Cook  Tyson",
+      age: 32,
+      country: "USA"
     }
   ];
   isLoggedIn: boolean;
   ifPrice: number = 0;
   toggle: boolean;
   num1: number[] = [20, 100, 2002, 3028];
-  str1: string[] = ['1', 'asd', 'dfg', 'hjk'];
-  num2 = [0,1,2,3];
+  str1: string[] = ["1", "asd", "dfg", "hjk"];
+  num2 = [0, 1, 2, 3];
   fetchData = [
-    {'title':'saurabh','description':'dd','tagline':'tt','date':'dd'},
-  {'title':'aman','description':'dd','tagline':'tt','date':'dd'},
-  {'title':'jessica','description':'dd','tagline':'tt','date':'dd'},
-  {'title':'rosh','description':'dd','tagline':'tt','date':'dd'}
-];
-  constructor() { }
+    { title: "saurabh", description: "dd", tagline: "tt", date: "dd" },
+    { title: "aman", description: "dd", tagline: "tt", date: "dd" },
+    { title: "jessica", description: "dd", tagline: "tt", date: "dd" },
+    { title: "rosh", description: "dd", tagline: "tt", date: "dd" }
+  ];
+  constructor() {}
 
   ngOnInit() {
     this.num1 = this.num2;
@@ -63,5 +62,4 @@ export class StructuralDirectiveComponent implements OnInit {
 
     this.showComponent = type;
   }
-
 }
