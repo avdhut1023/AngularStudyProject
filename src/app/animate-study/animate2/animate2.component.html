@@ -1,0 +1,16 @@
+<!-- list.component.html -->
+<h2>Angular Animations In Lists</h2>
+<button (click)="toggle()">Show / Hide Items</button>
+<hr />
+<code><a href="https://angular.io/api/animations/stagger">
+stagger</a> </code> an animation-specific function that is designed to be used inside of Angular's animation DSL language. It is designed to be used inside of an animation query() and works by issuing a timing gap between after each queried item is animated.
+
+<hr />
+<div [@listAnimation]="items.length"
+    (@listAnimation.start)="logAnimation($event)"
+    (@listAnimation.done)="logAnimation($event)"
+>
+  <div *ngFor="let item of items">
+    <div>{{ item }}</div>
+  </div>
+</div>

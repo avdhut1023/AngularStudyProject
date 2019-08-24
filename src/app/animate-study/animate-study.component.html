@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-3">
+    <ul class="list-group">
+      <li class="list-group-item" > <a [routerLink]="['./basic']" class="list-group-item list-group-item-action active">
+        Basic Animations
+      </a></li>
+      <li class="list-group-item" > <a [routerLink]="['./keyframe']" class="list-group-item list-group-item-action active">
+        Keyframes
+      </a></li>
+      <li class="list-group-item" > <a [routerLink]="['./animate2']" class="list-group-item list-group-item-action active">
+        Animation with query
+      </a></li>
+       
+<!--      <li class="list-group-item"><a href="#" (click)="setComponent($event , 'LifeCycleHooks')" class="list-group-item list-group-item-action active">
+          Life Cycle Hooks
+        </a></li>
+      <li class="list-group-item">Vestibulum at eros</li> -->
+    </ul>
+    
+  </div>
+  <div class="col-9" >
+    <router-outlet></router-outlet>
+
+  </div>
+</div>  
+

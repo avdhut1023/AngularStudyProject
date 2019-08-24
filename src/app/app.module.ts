@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { GlobalService } from './global.service';
@@ -39,6 +40,12 @@ import { ViewCapsChildComponent } from './cstudy/view-caps-child/view-caps-child
 import { TemplateRefVarComponent } from './cstudy/template-ref-var/template-ref-var.component';
 import { HighlightService } from './highlight.service';
 import { StyleClassComponent } from './structural-directive/style-class/style-class.component';
+import { AnimateStudyComponent } from './animate-study/animate-study.component';
+import { BasicAnimateComponent } from './animate-study/basic-animate/basic-animate.component';
+import { Animate2Component } from './animate-study/animate2/animate2.component';
+import { KeyFramesComponent } from './animate-study/key-frames/key-frames.component';
+import { ExponentialStrengthPipe } from './pipe-study/exponential-strength.pipe';
+import { Custom2Directive } from './structural-directive/custom2.directive';
 
 
 @NgModule({
@@ -69,7 +76,13 @@ import { StyleClassComponent } from './structural-directive/style-class/style-cl
     ViewEncapsComponent,
     ViewCapsChildComponent,
     TemplateRefVarComponent,
-    StyleClassComponent
+    StyleClassComponent,
+    AnimateStudyComponent,
+    BasicAnimateComponent,
+    Animate2Component,
+    KeyFramesComponent,
+    ExponentialStrengthPipe,
+    Custom2Directive
 
   ],
   imports: [
@@ -80,7 +93,8 @@ import { StyleClassComponent } from './structural-directive/style-class/style-cl
     AppRoutingModule,
     PostsModule,
     AlbumsModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [GlobalService, CanDeactivateGuard, CanActivateGuard, CanLoadGuard, HighlightService],
   bootstrap: [AppComponent]

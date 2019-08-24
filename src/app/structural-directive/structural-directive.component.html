@@ -163,11 +163,17 @@
     <app-style-class></app-style-class>
   </div>
   <div class="col-9" *ngIf="showComponent == 'custom'">
+    <input type="text" [(ngModel)]="mycolor" />
+    <input type="text" [(ngModel)]="mycolor2" />
+    <p style="height: 200px; width: 200px;" [appCustom2]="mycolor">
+      This is a sample Directive code.
+
+    </p>
     <div
       class="card"
       style="width: 18rem;"
       [appCustomDirective]="mycolor"
-      [highlightColor]="'tomato'"
+      [highlightColor]="mycolor2"
     >
       <div class="card-body">
         <h5 class="card-title">Card title</h5>

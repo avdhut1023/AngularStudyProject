@@ -16,7 +16,7 @@ export class CustomDirectiveDirective implements OnInit {
   @Input() highlightColor : string ;
   @HostBinding('style.backgroundColor') backgroundColor: string;
 
- constructor(private elementRef: ElementRef ,private renderer : Renderer2){
+ constructor(private elementRef: ElementRef , private renderer : Renderer2){
 
  }
 
@@ -24,12 +24,12 @@ export class CustomDirectiveDirective implements OnInit {
    this.backgroundColor = this.defaultColor;
  }
  @HostListener('mouseenter') mouseover(eventData: Event){
-   //this.renderer.setStyle(this.elementRef.nativeElement,'background-color','pink');
+   this.renderer.setStyle(this.elementRef.nativeElement,'background-color',this.defaultColor);
    this.backgroundColor =this.highlightColor;
  }
 
  @HostListener('mouseleave') mouseleave(eventData: Event){
-   //this.renderer.setStyle(this.elementRef.nativeElement,'background-color','transparent');
+   //this.renderer.setStyle(this.elementRef.nativeElement,'background-color',this.highlightColor);
    this.backgroundColor = this.defaultColor;
  }}
 
