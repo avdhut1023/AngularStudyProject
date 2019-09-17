@@ -9,12 +9,12 @@ export class CstudyService {
   constructor() { }
 
   public serviceMethod(){
-    alert('inside service method');
+   // alert('inside service method');
   }
 
   setEmail(email: string){
     this.emailTest = email;
-    this.emailSubject.next(email);
+
   }
 
   getEmail() {

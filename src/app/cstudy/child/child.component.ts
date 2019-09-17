@@ -16,12 +16,18 @@ export class ChildComponent implements OnInit, OnChanges, OnDestroy {
 
   email: string;
 
+  sendEmail(){
+    //this.childEvent.emit(this.email);
+    this.cstudyService.setEmail(this.email);
+  }
   ngOnDestroy(): void {
     console.log('Child says Good Bye!!');
   }
 
 
   constructor(private cstudyService: CstudyService) { }
+
+  
 
   ngOnInit() {
   }
@@ -37,9 +43,6 @@ export class ChildComponent implements OnInit, OnChanges, OnDestroy {
     } 
   }
 
-  sendEmail(){
-    this.childEvent.emit(this.email);
-    this.cstudyService.setEmail(this.email);
-  }
+  
 
 }

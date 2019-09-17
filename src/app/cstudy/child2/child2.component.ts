@@ -10,6 +10,9 @@ import { Subscription } from 'rxjs';
 export class Child2Component implements OnInit {
 
   email: string;
+  
+
+  
   emailSub: Subscription;
   constructor(private cstudyService: CstudyService) { }
 

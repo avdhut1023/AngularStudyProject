@@ -11,31 +11,20 @@ export class AgeLimitValidatorDirective implements Validator  {
   @HostBinding('class') eleClass: string = 'form-control';
   minAge: number = 4;
   maxAge: number  = 16;
-  validate(control: AbstractControl): {[key: string]: any} | null {
-    
-    if (control.value !== undefined && (isNaN(control.value) || control.value < this.minAge || control.value > this.maxAge)) {
-      this.eleClass = this.eleClass + ' is-invalid';
-      return { 'ageRange': true };
-  }
-  this.eleClass = 'form-control';
 
+  validate(control: AbstractControl): {[key: string]: any} | null {
+
+      if (control.value !== undefined && (isNaN(control.value) || control.value < this.minAge || control.value > this.maxAge)) {
+        this.eleClass = this.eleClass + ' is-invalid';
+        return { 'ageRange': true };
+    }
+    
+    this.eleClass = 'form-control';
     return null;
   }
 
-  registerOnValidatorChange?(fn: () => void): void {
-      console.log('resistered');
-  }
 
   constructor() { }
 
-  ageRangeValidatorWithRange(min: number, max: number): ValidatorFn {
-    return (control: AbstractControl): { [key: string]: boolean } | null => {
-        if (control.value !== undefined && (isNaN(control.value) || control.value < min || control.value > max)) {
-            return { 'ageRange': true };
-        }
-        return null;
-    };
-
-}
 
 }

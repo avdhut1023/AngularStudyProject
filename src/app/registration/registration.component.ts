@@ -9,6 +9,8 @@ import { NgForm, FormControl, FormGroup, Validators, FormBuilder, AbstractContro
 export class RegistrationComponent implements OnInit {
 
   @ViewChildren('myForm') myForm: NgForm;
+
+  
  /*  firstname: FormControl = new FormControl('');
   lastname: FormControl = new FormControl('');
  */
@@ -52,16 +54,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit(myForm: NgForm) {
-    console.log(myForm.valid);
      if (!myForm.valid) {
       alert('Form invalid');
       return false;
     }
-     alert('Success '); 
-
-     // alert(this.myFormGr.get('firstname').value);
-    //  const address = this.myFormGr.get('address');
-      //alert(address.get('street').value);
+     alert('Success ');
   }
 
    ageRangeValidator(control: AbstractControl): { [key: string]: boolean } | null {

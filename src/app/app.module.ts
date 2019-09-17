@@ -46,6 +46,9 @@ import { Animate2Component } from './animate-study/animate2/animate2.component';
 import { KeyFramesComponent } from './animate-study/key-frames/key-frames.component';
 import { ExponentialStrengthPipe } from './pipe-study/exponential-strength.pipe';
 import { Custom2Directive } from './structural-directive/custom2.directive';
+import { ServiceSubject1Component } from './cstudy/service-subject1/service-subject1.component';
+import { ServiceSubject2Component } from './cstudy/service-subject2/service-subject2.component';
+import { Child3Component } from './cstudy/child3/child3.component';
 
 
 @NgModule({
@@ -82,7 +85,10 @@ import { Custom2Directive } from './structural-directive/custom2.directive';
     Animate2Component,
     KeyFramesComponent,
     ExponentialStrengthPipe,
-    Custom2Directive
+    Custom2Directive,
+    ServiceSubject1Component,
+    ServiceSubject2Component,
+    Child3Component
 
   ],
   imports: [
