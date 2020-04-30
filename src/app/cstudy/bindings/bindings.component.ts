@@ -18,6 +18,10 @@ export class BindingsComponent implements OnInit {
   ngOnInit() {
     this.username = "vinayak";
     this.addition = this.add(-2010,300);
+    let p =  new Person();
+
+    console.log('Using Property ---- '+p.name);
+    console.log('Using Method ---- '+p.getName());
   }
 
    add(a: number, b: number): number{
@@ -27,3 +31,35 @@ export class BindingsComponent implements OnInit {
 
 
 }
+
+ class Person{
+    name: string;
+   age: number;
+   private isMarried: boolean = false;
+
+   constructor(){
+     this.name= "Barak";
+     this.age = 50;
+   }
+
+   
+
+   getName(){
+    return this.name;
+  }
+
+  public getAge(){
+    return this.age;
+  }
+}
+
+ class Student extends Person {
+ 
+  constructor(){
+    super();
+    this.age = 50;
+    this.name="Vinayak";
+  //  this.isMarried=true;
+  }
+  }
+
