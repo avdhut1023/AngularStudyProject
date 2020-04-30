@@ -13,6 +13,9 @@
     <li class="list-group-item"><a href="#" (click)="setComponent($event , 'LifeCycleHooks')" class="list-group-item list-group-item-action active">
         Life Cycle Hooks
       </a></li>
+      <li class="list-group-item"><a href="#" (click)="setComponent($event , 'Binding')" class="list-group-item list-group-item-action active">
+        Binding Demo
+      </a></li>
     <li class="list-group-item">Vestibulum at eros</li>
   </ul>
   
@@ -95,6 +98,10 @@
         </h3>
       <p class="encaps-example">Inside the Parent component</p>
       <app-view-encaps ></app-view-encaps>
+      
+    </div>
+    <div class="col-9" *ngIf="showComponent==='Binding'">
+      <app-bindings></app-bindings>
       
     </div>
 
