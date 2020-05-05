@@ -13,19 +13,28 @@ export class BindingsComponent implements OnInit {
   address: any;
   vechicle: string[];
   addition: number;
+  memberStudent = new Student();
+
   constructor() { }
 
   ngOnInit() {
     this.username = "vinayak";
     this.addition = this.add(-2010,300);
     let p =  new Person();
+   // this.memberStudent ;
 
     console.log('Using Property ---- '+p.name);
     console.log('Using Method ---- '+p.getName());
+    this.sampleParam('ABC','XYZ');
+    this.sampleParam('ABC');
   }
 
    add(a: number, b: number): number{
      return (a+b);
+  }
+
+  sampleParam(a: string,b?: string): void{
+    this.username = a+ ' ------- '+b;
   }
 
 
